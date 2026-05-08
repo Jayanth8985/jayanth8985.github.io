@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayanth Sanapathi | Data Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--border:rgba(148,163,184,0.18);--text:#e5eefc;--muted:#9fb0c9;--soft:#c4d2e8;--primary:#2dd4bf;--secondary:#60a5fa;--highlight:#fbbf24;--success:#22c55e;--shadow:0 20px 60px rgba(2,8,23,0.38);--radius-md:20px;--radius-lg:28px;--content:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,sans-serif;font-size:16px;line-height:1.65;color:var(--text);background:radial-gradient(circle at left top,rgba(45,212,191,0.12),transparent 30%),radial-gradient(circle at right top,rgba(96,165,250,0.14),transparent 26%),linear-gradient(rgb(8,16,29) 0%,rgb(11,18,32) 35%,rgb(11,19,35) 100%);overflow-x:hidden}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.container{width:min(var(--content),calc(100% - 2.4rem));margin:0 auto}
+.scroll-line{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--primary),var(--secondary));z-index:999}
+.skip-link{position:absolute;left:-999px;top:10px;background:var(--primary);color:rgb(4,17,28);padding:.8rem 1rem;border-radius:999px;font-weight:700;z-index:1000}
+.skip-link:focus{left:16px}
+nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:rgba(8,16,29,0.7);border-bottom:1px solid var(--border)}
+.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(96,165,250,0.2));border:1px solid rgba(255,255,255,0.08)}
+.brand-mark svg{width:22px;height:22px;color:var(--primary)}
+.brand-copy strong{display:block;font-family:"Instrument Sans",sans-serif;font-size:.98rem}
+.brand-copy span{display:block;color:var(--muted);font-size:.83rem}
+.nav-links{display:flex;list-style:none;gap:1.35rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.94rem;font-weight:600}
+.nav-links a:hover{color:var(--primary)}
+main section{padding:clamp(2.5rem,4vw,4rem) 0}
+.hero{padding:clamp(5rem,10vw,8rem) 0 3rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,0.8fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.65rem;padding:.7rem 1rem;border-radius:999px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.18);color:rgb(152,255,240);font-size:.83rem;font-weight:700;letter-spacing:.04em;margin-bottom:1.25rem}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 6px rgba(34,197,94,0.14)}
+h1{font-family:"Instrument Sans",sans-serif;font-size:clamp(2.9rem,7vw,5.6rem);line-height:.95;letter-spacing:-.05em;margin-bottom:1rem}
+.hero-role{font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--soft);font-weight:600;margin-bottom:1.1rem}
+.hero-desc{max-width:62ch;color:var(--muted);margin-bottom:1.8rem}
+.hero-points{list-style:none;display:grid;gap:.8rem;margin-bottom:2rem}
+.hero-points li{display:flex;gap:.75rem;align-items:flex-start;color:var(--soft)}
+.hero-points li::before{content:"✦";color:var(--primary);margin-top:.1rem}
+.hero-actions,.contact-links{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid transparent;transition:.25s}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:rgb(6,17,31);box-shadow:0 14px 34px rgba(45,212,191,0.22)}
+.btn-secondary{border-color:var(--border);background:rgba(255,255,255,0.03);color:var(--text)}
+.btn-resume{background:rgba(251,191,36,0.12);border-color:rgba(251,191,36,0.4);color:rgb(255,217,120);font-weight:700}
+.btn-resume:hover{background:rgba(251,191,36,0.22);transform:translateY(-1px)}
+.hero-card,.stat-card,.card,.timeline-item,.contact-box{background:linear-gradient(rgba(18,27,45,0.92),rgba(13,21,34,0.9));border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow)}
+.hero-card{border-radius:var(--radius-lg);padding:clamp(1.4rem,3vw,2rem)}
+.hero-card-top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
+.profile-cluster{display:flex;gap:1rem;align-items:center}
+.hero-card-title{font-weight:800;font-size:1.1rem}
+.hero-card-sub{color:var(--muted);font-size:.95rem;margin-top:.2rem}
+.badge{padding:.45rem .75rem;border-radius:999px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.18);color:rgb(255,217,120);font-size:.82rem;font-weight:700;white-space:nowrap}
+.metric-list{display:grid;gap:.9rem}
+.metric{display:flex;justify-content:space-between;gap:1rem;padding:.95rem 1rem;border:1px solid rgba(255,255,255,0.06);border-radius:18px;background:rgba(255,255,255,0.024)}
+.metric span:first-child{color:var(--muted)}
+.stats-grid,.skills-grid,.projects-grid,.education-grid{display:grid;gap:1rem}
+.stats-grid{grid-template-columns:repeat(4,1fr)}
+.skills-grid,.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.education-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stat-card,.card,.timeline-item{padding:1.4rem}
+.stat-value{display:block;font-family:"Instrument Sans",sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1;color:var(--primary);margin-bottom:.45rem}
+.stat-label{color:var(--muted);font-size:.92rem;font-weight:600}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.6rem}
+.section-kicker{color:var(--primary);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:800;margin-bottom:.55rem}
+.section-title{font-family:"Instrument Sans",sans-serif;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.04em}
+.section-copy,.card p,.project-desc,.timeline-list li,.education-card p,.contact-box p,.resume-note{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.55rem}
+.tag{padding:.5rem .8rem;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--soft);font-size:.88rem;font-weight:600}
+.project-card{display:flex;flex-direction:column;gap:1rem}
+.project-top,.timeline-top,.footer-wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.project-index{color:var(--primary);font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.project-date,.timeline-period,.year{color:var(--highlight);font-weight:700}
+.project-title,.timeline-role,.contact-box h2{font-family:"Instrument Sans",sans-serif}
+.project-title{font-size:1.28rem;line-height:1.2}
+.impact-list,.timeline-list{list-style:none;display:grid;gap:.55rem}
+.impact-list li{display:flex;gap:.7rem;color:var(--soft)}
+.impact-list li::before{content:"→";color:var(--primary)}
+.timeline-role{font-size:1.18rem;margin-bottom:.2rem}
+.timeline-company{color:var(--soft);font-weight:600}
+.timeline-item{margin-bottom:1rem}
+.year{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
+.score{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;border-radius:999px;background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.16);color:rgb(183,214,255);font-weight:700;font-size:.9rem}
+.contact-box{padding:clamp(1.5rem,4vw,3rem)}
+.contact-box h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:.85rem}
+.resume-note{font-size:.9rem;margin-top:.85rem}
+footer{padding:1.6rem 0 2.5rem;color:var(--muted)}
+.footer-wrap{border-top:1px solid var(--border);padding-top:1.35rem}
+.card h3{font-family:"Instrument Sans",sans-serif;font-size:1.1rem;margin-bottom:.8rem}
+@media(max-width:980px){.hero-grid,.skills-grid,.projects-grid,.education-grid,.stats-grid{grid-template-columns:1fr}.nav-links{display:none}}
+@media(max-width:640px){.container{width:min(var(--content),calc(100% - 1.2rem))}.hero-actions,.contact-links,.project-top,.timeline-top,.section-head,.footer-wrap,.hero-card-top,.profile-cluster{flex-direction:column;align-items:flex-start}.btn{width:100%}h1{font-size:clamp(2.4rem,12vw,4rem)}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="scroll-line" id="scrollLine"></div>
+<nav>
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 5v10c0 2.2 1.8 4 4 4h1"></path>
+          <path d="M18 7v8c0 2.2-1.8 4-4 4h-1"></path>
+          <path d="M9 19h6"></path>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>Jayanth Sanapathi</strong>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Internships</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://drive.google.com/file/d/YOUR_RESUME_LINK" target="_blank" style="color:rgb(255,217,120);border:1px solid rgba(251,191,36,0.4);padding:.3rem .8rem;border-radius:999px;">📄 Resume</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main-content">
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Open to Data Analyst and Business Analyst roles</div>
+        <h1>Jayanth<br>Sanapathi</h1>
+        <p class="hero-role">Data Analyst • Excel • SQL • Python • Dashboarding</p>
+        <p class="hero-desc">Fresher data analyst with hands-on project experience in Excel dashboards, SQL, Python, and machine learning.</p>
+        <ul class="hero-points">
+          <li>Built data projects using Excel, SQL, Python, Tableau, Power BI, and machine learning concepts.</li>
+          <li>Created dashboards and analyses that make trends, KPIs, and decisions easier to understand.</li>
+          <li>Looking for fresher opportunities across India in analytics, reporting, and data-driven operations.</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-resume" href="https://drive.google.com/file/d/YOUR_RESUME_LINK" target="_blank" rel="noopener noreferrer">📄 Download Resume</a>
+          <a class="btn btn-secondary" href="mailto:sanapathijayanth2000@gmail.com">Email Me</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card-top">
+          <div class="profile-cluster">
+            <div>
+              <div class="hero-card-title">Recruiter Snapshot</div>
+              <div class="hero-card-sub">Entry-level analyst profile with hands-on project work</div>
+            </div>
+          </div>
+          <span class="badge">Fresher</span>
+        </div>
+        <div class="metric-list">
+          <div class="metric"><span>Experience</span><strong>2 internships</strong></div>
+          <div class="metric"><span>Portfolio projects</span><strong>2 strong projects</strong></div>
+          <div class="metric"><span>Primary tools</span><strong>Excel, SQL, Python</strong></div>
+          <div class="metric"><span>Location</span><strong>Andhra Pradesh, India</strong></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="container stats-grid">
+      <article class="stat-card"><span class="stat-value">2</span><span class="stat-label">Internships completed</span></article>
+      <article class="stat-card"><span class="stat-value">2</span><span class="stat-label">Featured projects</span></article>
+      <article class="stat-card"><span class="stat-value">6+</span><span class="stat-label">Core tools and platforms</span></article>
+      <article class="stat-card"><span class="stat-value">66%</span><span class="stat-label">B.Tech academic score</span></article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">Profile</div><h2 class="section-title">About Me</h2></div>
+      </div>
+      <div class="card">
+        <h3>Career Direction</h3>
+        <p>I am building my career in data analytics with practical experience in cleaning data, creating dashboards, tracking performance metrics, and presenting findings in a simple business-focused way. I enjoy working on structured reporting, exploratory analysis, and visual storytelling that supports decisions. With hands-on exposure to Excel, SQL, Python, Tableau, and Power BI, I bring the mindset of turning raw data into clear, actionable insights that help teams move faster and smarter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">Capabilities</div><h2 class="section-title">Technical Skills</h2></div>
+      </div>
+      <div class="skills-grid">
+        <article class="card"><h3>Data Analysis</h3><div class="tags"><span class="tag">Excel</span><span class="tag">Pivot Tables</span><span class="tag">Dashboards</span><span class="tag">EDA</span><span class="tag">Data Cleaning</span></div></article>
+        <article class="card"><h3>Programming &amp; Libraries</h3><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div></article>
+        <article class="card"><h3>Databases &amp; Queries</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Joins</span><span class="tag">Aggregations</span></div></article>
+        <article class="card"><h3>Visualization &amp; Tools</h3><div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Azure</span><span class="tag">MATLAB</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">Portfolio Work</div><h2 class="section-title">Featured Projects</h2></div>
+      </div>
+      <div class="projects-grid">
+        <article class="card project-card">
+          <div class="project-top"><div><div class="project-index">Project 01</div><h3 class="project-title">IPL Season Analysis (2008–2025)</h3></div></div>
+          <p class="project-desc">Analyzed 18 seasons of IPL data to find patterns in toss decisions, match results, venues, and award trends. Built an Excel dashboard with KPI cards, slicers, and pivot tables.</p>
+          <ul class="impact-list">
+            <li>Found that a high share of toss winners preferred fielding first.</li>
+            <li>Organized season-level insights into a dashboard format easy for non-technical users.</li>
+            <li>Strengthened skills in Excel reporting, summary statistics, and sports data storytelling.</li>
+          </ul>
+          <div class="tags"><span class="tag">Excel</span><span class="tag">Pivot Tables</span><span class="tag">KPI Cards</span><span class="tag">Slicers</span></div>
+          <a class="btn btn-secondary" href="https://github.com/Jayanth8985/IPL-Season-Analysis-2008-2025" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
+        </article>
+        <article class="card project-card">
+          <div class="project-top"><div><div class="project-index">Project 02</div><h3 class="project-title">U-Net for Underwater Image Enhancement</h3></div></div>
+          <p class="project-desc">Developed a deep learning model to improve underwater image quality by reducing noise and correcting color distortion. Evaluated output quality using PSNR and SSIM.</p>
+          <ul class="impact-list">
+            <li>Applied deep learning concepts to a real-world visual enhancement problem.</li>
+            <li>Worked with model evaluation metrics to compare output quality.</li>
+            <li>Showed ability to combine analytics thinking with technical experimentation.</li>
+          </ul>
+          <div class="tags"><span class="tag">MATLAB</span><span class="tag">Deep Learning</span><span class="tag">U-Net</span><span class="tag">PSNR</span><span class="tag">SSIM</span></div>
+          <a class="btn btn-secondary" href="https://github.com/Jayanth8985/UNet-Underwater-Image-Enhancement" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">Practical Experience</div><h2 class="section-title">Internships</h2></div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-top"><div><div class="timeline-role">Backend Web Developer Intern</div><div class="timeline-company">Skill Dzire</div></div><div class="timeline-period">May 2023 – Jul 2023</div></div>
+          <ul class="timeline-list">
+            <li>Optimized SQL queries for data retrieval and reviewed API response behavior to identify performance bottlenecks.</li>
+            <li>Performed testing and reporting to support code quality and data accuracy.</li>
+            <li>Worked with teams to document workflows and improve backend reliability.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-top"><div><div class="timeline-role">Web Developer Intern</div><div class="timeline-company">Skill Dzire</div></div><div class="timeline-period">Oct 2024 – Mar 2025</div></div>
+          <ul class="timeline-list">
+            <li>Tracked website performance metrics and supported page optimization efforts.</li>
+            <li>Managed version control using Git and GitHub while helping with deployment-related tasks.</li>
+            <li>Used Excel-based analysis to review engagement patterns and suggest UI improvements.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-kicker">Academic Background</div><h2 class="section-title">Education</h2></div>
+      </div>
+      <div class="education-grid">
+        <article class="card education-card"><div class="year">2021 – 2025</div><h3>B.Tech in Electronics and Communication Engineering</h3><p>Aditya College of Engineering &amp; Technology</p><div class="score" style="margin-top:.8rem">Score: 66%</div></article>
+        <article class="card education-card"><div class="year">2019 – 2021</div><h3>Intermediate (12th)</h3><p>Sri Chaitanya Junior College</p><div class="score" style="margin-top:.8rem">Score: 89%</div></article>
+        <article class="card education-card"><div class="year">2018 – 2019</div><h3>SSC (10th)</h3><p>Sarada E.M High School</p><div class="score" style="margin-top:.8rem">Score: 95%</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Let's Connect</h2>
+        <p>I am actively looking for data analyst and business analyst roles. Feel free to reach out via email or connect on LinkedIn.</p>
+        <div class="contact-links" style="margin-top:1.5rem">
+          <a class="btn btn-primary" href="mailto:sanapathijayanth2000@gmail.com">sanapathijayanth2000@gmail.com</a>
+          <a class="btn btn-secondary" href="https://linkedin.com/in/jayanth-sanapathi" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          <a class="btn btn-secondary" href="https://github.com/Jayanth8985" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-wrap">
+      <span>© 2025 Jayanth Sanapathi</span>
+      <span>Built for Data Analyst roles · Andhra Pradesh, India</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const scrollLine = document.getElementById('scrollLine');
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    scrollLine.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>
